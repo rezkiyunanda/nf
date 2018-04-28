@@ -1,7 +1,8 @@
 <table class="table table-responsive" id="korbanKecelakaans-table">
     <thead>
         <tr>
-            <th>Id Kecelakaan</th>
+        <th>No KTP</th>   
+        <th>No Laporan Kecelakaan</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Umur</th>
@@ -12,7 +13,7 @@
     <tbody>
     @foreach($korbanKecelakaans as $korbanKecelakaan)
         <tr>
-            <td>{!! $korbanKecelakaan->id_kecelakaan !!}</td>
+            <td>{!! $korbanKecelakaan->kecelakaan_id !!}</td>
             <td>{!! $korbanKecelakaan->nama !!}</td>
             <td>{!! $korbanKecelakaan->jenis_kelamin !!}</td>
             <td>{!! $korbanKecelakaan->umur !!}</td>

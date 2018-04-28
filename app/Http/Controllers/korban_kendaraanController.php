@@ -11,6 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+
 class korban_kendaraanController extends Controller
 {
     /** @var  korban_kendaraanRepository */

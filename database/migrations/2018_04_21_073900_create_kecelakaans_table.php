@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+//use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Phaza\LaravelPostgis\Schema\Blueprint;
 
 class CreateKecelakaansTable extends Migration
 {
@@ -18,6 +19,7 @@ class CreateKecelakaansTable extends Migration
             $table->integer('no_lapangan');
             $table->string('keterangan_lokasi');
             $table->integer('total_kerugian');
+            $table->multipolygon('geom', "GEOMETRY", 0)->nullable();
         
             $table->timestamps();
         });

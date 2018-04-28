@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\kecelakaan;
 
 class korban_kecelakaanController extends Controller
 {
@@ -43,7 +44,8 @@ class korban_kecelakaanController extends Controller
      */
     public function create()
     {
-        return view('korban_kecelakaans.create');
+        $kecelakaan = kecelakaan::pluck('no_lapangan','id');
+        return view('korban_kecelakaans.create',compact('kecelakaan'));
     }
 
     /**

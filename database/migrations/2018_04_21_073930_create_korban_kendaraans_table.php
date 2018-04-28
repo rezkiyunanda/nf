@@ -14,16 +14,17 @@ class CreateKorbanKendaraansTable extends Migration
     public function up()
     {
         Schema::create('korban_kendaraans', function (Blueprint $table) {
+            $table->increments('id');
             $table->unsignedInteger('no_ktp');
-            $table->unsignedInteger('no_plat');
+            $table->unsignedInteger('kendaraan_id');
             $table->string('nama');
             $table->string('jenis_kelamin');
             $table->string('umur');
             $table->string('kondisi');
             $table->timestamps();
 
-            $table->primary('no_ktp');
-            $table->foreign('no_plat')->references('no_plat')->on('kendaraans');
+          
+            $table->foreign('kendaraan_id')->references('id')->on('kendaraans');
         });
     }
 

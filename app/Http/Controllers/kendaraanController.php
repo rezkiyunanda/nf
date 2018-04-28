@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\kecelakaan;
 
 class kendaraanController extends Controller
 {
@@ -19,6 +20,7 @@ class kendaraanController extends Controller
     public function __construct(kendaraanRepository $kendaraanRepo)
     {
         $this->kendaraanRepository = $kendaraanRepo;
+        $this->kecelakaan = kecelakaan::pluck('no_lapangan','id');
     }
 
     /**
@@ -34,6 +36,7 @@ class kendaraanController extends Controller
 
         return view('kendaraans.index')
             ->with('kendaraans', $kendaraans);
+
     }
 
     /**
@@ -43,7 +46,9 @@ class kendaraanController extends Controller
      */
     public function create()
     {
-        return view('kendaraans.create');
+        
+        return view('kendaraans.create')
+        ->with('kecelakaan',$this->kecelakaan);
     }
 
     /**
@@ -77,11 +82,14 @@ class kendaraanController extends Controller
 
         if (empty($kendaraan)) {
             Flash::error('Kendaraan not found');
+            
 
             return redirect(route('kendaraans.index'));
         }
 
-        return view('kendaraans.show')->with('kendaraan', $kendaraan);
+        return view('kendaraans.show')
+        ->with('kendaraan', $kendaraan)
+        ->with('kecelakaan', $this->kecelakaan);
     }
 
     /**
@@ -100,6 +108,8 @@ class kendaraanController extends Controller
 
             return redirect(route('kendaraans.index'));
         }
+        
+
 
         return view('kendaraans.edit')->with('kendaraan', $kendaraan);
     }

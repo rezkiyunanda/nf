@@ -1,10 +1,14 @@
 <!-- Id Kecelakaan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_kecelakaan', 'Id Kecelakaan:') !!}
-    {!! Form::number('id_kecelakaan', null, ['class' => 'form-control']) !!}
+    {!! Form::label('no_ktp', 'no_ktp:') !!}
+    {!! Form::text('no_ktp', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Nama Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('kecelakaan_id', 'Nomor lapangan:') !!}
+    {!! Form::select('kecelakaan_id',$kecelakaan, null, ['class' => 'form-control']) !!}
+</div>
+<!-- no_ktp Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nama', 'Nama:') !!}
     {!! Form::text('nama', null, ['class' => 'form-control']) !!}

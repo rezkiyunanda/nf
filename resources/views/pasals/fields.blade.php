@@ -14,12 +14,6 @@
     {!! Form::text('bunyi_pasal', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Jenis Pelanggaran Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('jenis_pelanggaran', 'Jenis Pelanggaran:') !!}
-    {!! Form::text('jenis_pelanggaran', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}

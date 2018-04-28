@@ -6,8 +6,8 @@
 
 <!-- Id Kecelakaan Field -->
 <div class="form-group">
-    {!! Form::label('id_kecelakaan', 'Id Kecelakaan:') !!}
-    <p>{!! $kendaraan->id_kecelakaan !!}</p>
+    {!! Form::label('kecelakaan_id', 'No Laporan:') !!}
+    <p>{!! $kecelakaan[$kendaraan->kecelakaan_id] !!}</p>
 </div>
 
 <!-- Nama Field -->

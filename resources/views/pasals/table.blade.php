@@ -3,7 +3,7 @@
         <tr>
         <th>No Pasal</th>
         <th>Ayat Pasal</th>
-        <th>Jenis Pasal</th>
+        <th>Bunyi Pasal</th>
         
             <th colspan="3">Action</th>
         </tr>

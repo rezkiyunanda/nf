@@ -1,7 +1,13 @@
+<div class="form-group col-sm-6">
+    {!! Form::label('no_plat', 'Nomor Plat:') !!}
+    {!! Form::number('no_plat', null, ['class' => 'form-control']) !!}
+</div>
+
+
 <!-- Id Kecelakaan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_kecelakaan', 'Id Kecelakaan:') !!}
-    {!! Form::number('id_kecelakaan', null, ['class' => 'form-control']) !!}
+    {!! Form::label('kecelakaan_id', 'Nomor lapangan:') !!}
+    {!! Form::select('kecelakaan_id',$kecelakaan, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Nama Field -->
@@ -36,8 +42,8 @@
 
 <!-- Id Merk Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_merk', 'Id Merk:') !!}
-    {!! Form::text('id_merk', null, ['class' => 'form-control']) !!}
+    {!! Form::label('merek', ' Merek:') !!}
+    {!! Form::text('merek', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Kondisi Kendaraan Field -->
@@ -72,8 +78,8 @@
 
 <!-- Status 1 Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('status_1', 'Status 1:') !!}
-    {!! Form::text('status_1', null, ['class' => 'form-control']) !!}
+    {!! Form::label('status', 'Status:') !!}
+    {!! Form::text('status', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

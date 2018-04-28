@@ -42,19 +42,20 @@ class kendaraan extends Model
 
 
     public $fillable = [
-        'id_kecelakaan',
+        'no_plat',
+        'kecelakaan_id',
         'nama',
         'alamat',
         'umur',
         'sim',
         'status_disita',
-        'id_merk',
+        'merek',
         'kondisi_kendaraan',
         'jenis_kendaraan',
         'status_kerugian',
         'no_reg_bb',
         'kerugian',
-        'status_1'
+        'status'
     ];
 
     /**
@@ -64,19 +65,19 @@ class kendaraan extends Model
      */
     protected $casts = [
         'no_plat' => 'integer',
-        'id_kecelakaan' => 'integer',
+        'kecelakaan_id' => 'integer',
         'nama' => 'string',
         'alamat' => 'string',
         'umur' => 'string',
         'sim' => 'string',
         'status_disita' => 'string',
-        'id_merk' => 'string',
+        'merek' => 'string',
         'kondisi_kendaraan' => 'string',
         'jenis_kendaraan' => 'string',
         'status_kerugian' => 'string',
         'no_reg_bb' => 'integer',
         'kerugian' => 'integer',
-        'status_1' => 'string'
+        'status' => 'string'
     ];
 
     /**

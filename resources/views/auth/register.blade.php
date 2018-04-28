@@ -66,6 +66,17 @@
                 @endif
             </div>
 
+             <div class="form-group has-feedback{{ $errors->has('no_anggota') ? ' has-error' : '' }}">
+                <input type="no_anggota" class="form-control" name="no_anggota" value="{{ old('no_anggota') }}" placeholder="no_anggota">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                @if ($errors->has('no_anggota'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('no_anggota') }}</strong>
+                    </span>
+                @endif
+            </div>
+
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

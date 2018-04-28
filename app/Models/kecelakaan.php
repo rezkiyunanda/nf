@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Phaza\LaravelPostgis\Eloquent\PostgisTrait;
 
 /**
  * Class kecelakaan
@@ -21,6 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class kecelakaan extends Model
 {
     // use SoftDeletes;
+    use PostgisTrait;
 
     public $table = 'kecelakaans';
     
@@ -34,7 +36,8 @@ class kecelakaan extends Model
     public $fillable = [
         'no_lapangan',
         'keterangan_lokasi',
-        'total_kerugian'
+        'total_kerugian',
+        'geom'
     ];
 
     /**
@@ -42,6 +45,18 @@ class kecelakaan extends Model
      *
      * @var array
      */
+
+    protected $postgisFields = [
+        'geom'
+    ];
+
+    protected $postgisTypes = [
+        'geom' => [
+            'geomtype' => 'geometry',
+            'srid' => 0
+        ]
+    ];
+
     protected $casts = [
         'id' => 'integer',
         'no_lapangan' => 'integer',
